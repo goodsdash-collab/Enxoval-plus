@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fff8f5;
+  --foreground: #4a3728;
+  --blush: #f8d9d0;
+  --peach: #ffd8c2;
+  --mint: #d4efe8;
+  --lavender: #e8dff5;
+  --cream: #fff5eb;
+  --rose: #e8a0a0;
+  --sage: #9cc5b0;
+}
+
+body {
+  color: var(--foreground);
+  background: linear-gradient(160deg, #fff8f5 0%, #fff5eb 40%, #f5f0ff 100%);
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .card-soft {
+    @apply rounded-2xl bg-white/80 shadow-sm border border-rose-100/60 backdrop-blur-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-rose-400 px-5 py-2.5 text-white font-medium shadow-sm hover:bg-rose-500 transition disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full bg-white border border-rose-200 px-4 py-2 text-rose-700 font-medium hover:bg-rose-50 transition;
+  }
+}

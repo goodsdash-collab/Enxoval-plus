@@ -1,0 +1,580 @@
+{
+  "id": "casamento",
+  "nome": "Enxoval de Casamento",
+  "descricao": "Checklist acolhedor para montar a casa a dois. Marque o que já tem, o que comprou e o que ganhou — e compartilhe o que ainda falta com a família no chá de panela.",
+  "inspiracao_ux": {
+    "checklist": "Progresso por categoria (o que já tem / o que falta)",
+    "lista_presentes": "Itens com lista_presentes=true podem ser reservados ou marcados como recebidos",
+    "wishlist": "Itens com wishlist=true sugerem salvar produto/loja favorita",
+    "timeline": "Use marcos como noivado, 3 meses antes, 1 mês antes e mudança",
+    "status": [
+      "pendente",
+      "comprado",
+      "ganho"
+    ]
+  },
+  "marcos_timeline": [
+    {
+      "id": "inicio",
+      "nome": "Começar a lista",
+      "quando": "Após o noivado"
+    },
+    {
+      "id": "grandes",
+      "nome": "Eletros e móveis grandes",
+      "quando": "3–6 meses antes"
+    },
+    {
+      "id": "textil",
+      "nome": "Cama, mesa e banho",
+      "quando": "2–3 meses antes"
+    },
+    {
+      "id": "cozinha",
+      "nome": "Cozinha e limpeza",
+      "quando": "1–2 meses antes"
+    },
+    {
+      "id": "cha",
+      "nome": "Lista do chá de panela",
+      "quando": "4–6 semanas antes do chá"
+    },
+    {
+      "id": "mudanca",
+      "nome": "Revisão final",
+      "quando": "Semana da mudança"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "cama",
+      "nome": "Cama",
+      "itens": [
+        {
+          "id": "jogo-de-cama-casal",
+          "nome": "Jogo de cama casal",
+          "quantidade_sugerida": 3,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Algodão 200 fios ou mais aguenta bem o uso diário.",
+          "lista_presentes": true
+        },
+        {
+          "id": "edredom-casal",
+          "nome": "Edredom casal",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Um para o frio e outro de reserva; preferência por preenchimento lavável.",
+          "lista_presentes": true
+        },
+        {
+          "id": "cobertor-casal",
+          "nome": "Cobertor casal",
+          "quantidade_sugerida": 2,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Útil em noites de ar-condicionado ou climas mais frios.",
+          "lista_presentes": true
+        },
+        {
+          "id": "travesseiros",
+          "nome": "Travesseiro",
+          "quantidade_sugerida": 4,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Dois por pessoa; misture densidades (macio e firme).",
+          "lista_presentes": true
+        },
+        {
+          "id": "protetor-de-colchao",
+          "nome": "Protetor de colchão impermeável",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Protege o colchão e facilita a limpeza.",
+          "lista_presentes": true
+        },
+        {
+          "id": "capa-de-edredom",
+          "nome": "Capa de edredom / duvet",
+          "quantidade_sugerida": 2,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Facilita lavar e mudar o visual do quarto.",
+          "lista_presentes": true
+        },
+        {
+          "id": "almofadas-decorativas",
+          "nome": "Almofada decorativa",
+          "quantidade_sugerida": 4,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Capas removíveis facilitam a limpeza.",
+          "lista_presentes": true
+        },
+        {
+          "id": "saia-cama-box",
+          "nome": "Saia para cama box",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Dá acabamento e esconde a base da cama.",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Roupas de cama e conforto do quarto"
+    },
+    {
+      "id": "mesa",
+      "nome": "Mesa",
+      "itens": [
+        {
+          "id": "jogo-de-pratos",
+          "nome": "Jogo de pratos (raso, fundo e sobremesa)",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Conjunto para 6 ou 12 pessoas é o mais comum.",
+          "lista_presentes": true
+        },
+        {
+          "id": "jogo-de-talheres",
+          "nome": "Jogo de talheres inox",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Aço 18/10 aguenta máquina de lavar.",
+          "lista_presentes": true
+        },
+        {
+          "id": "copos-de-vidro",
+          "nome": "Copos de vidro (água/suco)",
+          "quantidade_sugerida": 12,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Tenha reserva: copos quebram com frequência.",
+          "lista_presentes": true
+        },
+        {
+          "id": "tacas-de-vinho",
+          "nome": "Taças de vinho",
+          "quantidade_sugerida": 6,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Para jantares e ocasiões especiais.",
+          "lista_presentes": true
+        },
+        {
+          "id": "xicaras-e-pires",
+          "nome": "Xícaras e pires",
+          "quantidade_sugerida": 6,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Úteis no café da manhã e com visitas.",
+          "lista_presentes": true
+        },
+        {
+          "id": "jogo-americano",
+          "nome": "Jogo americano",
+          "quantidade_sugerida": 6,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Protege a mesa no dia a dia.",
+          "lista_presentes": true
+        },
+        {
+          "id": "toalha-de-mesa",
+          "nome": "Toalha de mesa",
+          "quantidade_sugerida": 2,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Uma do dia a dia e outra mais formal.",
+          "lista_presentes": true
+        },
+        {
+          "id": "guardanapos-tecido",
+          "nome": "Guardanapo de tecido",
+          "quantidade_sugerida": 12,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "sousplat",
+          "nome": "Sousplat",
+          "quantidade_sugerida": 6,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Toque especial em mesa posta.",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Louças, talheres e mesa posta"
+    },
+    {
+      "id": "banho",
+      "nome": "Banho",
+      "itens": [
+        {
+          "id": "toalha-de-banho",
+          "nome": "Toalha de banho",
+          "quantidade_sugerida": 6,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Pelo menos 3 por pessoa para rotacionar.",
+          "lista_presentes": true
+        },
+        {
+          "id": "toalha-de-rosto",
+          "nome": "Toalha de rosto",
+          "quantidade_sugerida": 6,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "toalha-de-piso",
+          "nome": "Toalha de piso antiderrapante",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "lixeira-banheiro",
+          "nome": "Lixeira de banheiro com tampa",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "kit-toalhas-visita",
+          "nome": "Kit toalhas para visita",
+          "quantidade_sugerida": 2,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Separe um jogo só para hóspedes.",
+          "lista_presentes": true
+        },
+        {
+          "id": "cortina-ou-box",
+          "nome": "Cortina ou box de banheiro",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "saboneteira-porta-escovas",
+          "nome": "Saboneteira e porta-escovas",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "organizador-box",
+          "nome": "Organizador de box",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Toalhas e organização do banheiro"
+    },
+    {
+      "id": "cozinha",
+      "nome": "Cozinha",
+      "itens": [
+        {
+          "id": "jogo-de-panelas",
+          "nome": "Jogo de panelas",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Inclua frigideira, caçarola e panela média.",
+          "lista_presentes": true
+        },
+        {
+          "id": "conjunto-facas",
+          "nome": "Conjunto de facas de cozinha",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Chef, serra e destreza cobrem o básico.",
+          "lista_presentes": true
+        },
+        {
+          "id": "tabua-de-corte",
+          "nome": "Tábua de corte",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Separe carnes e vegetais.",
+          "lista_presentes": true
+        },
+        {
+          "id": "utensilios-basicos",
+          "nome": "Kit utensílios (colher, espátula, concha, pegador)",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Silicone ou madeira não riscam antiaderente.",
+          "lista_presentes": true
+        },
+        {
+          "id": "panela-de-pressao",
+          "nome": "Panela de pressão",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Clássico brasileiro para feijão e carnes.",
+          "lista_presentes": true
+        },
+        {
+          "id": "pote-hermetico",
+          "nome": "Potes herméticos",
+          "quantidade_sugerida": 10,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Ótimos para despensa e sobras.",
+          "lista_presentes": true
+        },
+        {
+          "id": "formas-assadeiras",
+          "nome": "Formas e assadeiras",
+          "quantidade_sugerida": 3,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "escorredor-louca",
+          "nome": "Escorredor de louça",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "jarra",
+          "nome": "Jarra de suco/água",
+          "quantidade_sugerida": 2,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "espremedor",
+          "nome": "Espremedor de cítricos",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "balanca-cozinha",
+          "nome": "Balança de cozinha",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Panelas, utensílios e organização"
+    },
+    {
+      "id": "eletros",
+      "nome": "Eletros",
+      "itens": [
+        {
+          "id": "geladeira",
+          "nome": "Geladeira",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Priorize selo Procel A.",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "fogao",
+          "nome": "Fogão 4 ou 5 bocas",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Confirme gás encanado ou botijão.",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "micro-ondas",
+          "nome": "Micro-ondas",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "liquidificador",
+          "nome": "Liquidificador",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "cafeteira",
+          "nome": "Cafeteira",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Elétrica ou espresso, conforme o hábito.",
+          "lista_presentes": true
+        },
+        {
+          "id": "sanduicheira",
+          "nome": "Sanduicheira / grill",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "batedeira",
+          "nome": "Batedeira",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "aspirador",
+          "nome": "Aspirador de pó",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "ferro-passar",
+          "nome": "Ferro de passar a vapor",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "airfryer",
+          "nome": "Air fryer",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Muito popular; reduz uso de óleo.",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "multiprocessador",
+          "nome": "Multiprocessador",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "lava-loucas",
+          "nome": "Lava-louças",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Se houver espaço e ponto de água.",
+          "wishlist": true,
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Eletrodomésticos do lar"
+    },
+    {
+      "id": "lavanderia-limpeza",
+      "nome": "Lavanderia e Limpeza",
+      "itens": [
+        {
+          "id": "maquina-lavar",
+          "nome": "Máquina de lavar",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "10–12 kg atende bem um casal.",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "varal",
+          "nome": "Varal de chão ou de teto",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "cesto-roupas",
+          "nome": "Cesto de roupa suja",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "kit-limpeza",
+          "nome": "Balde, rodo e vassoura",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "tabua-passar",
+          "nome": "Tábua de passar",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Dobravel economiza espaço.",
+          "lista_presentes": true
+        },
+        {
+          "id": "panos-limpeza",
+          "nome": "Panos de limpeza / flanelas",
+          "quantidade_sugerida": 10,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "organizadores-lavanderia",
+          "nome": "Organizadores de lavanderia",
+          "quantidade_sugerida": 3,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "secadora",
+          "nome": "Secadora de roupas",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Útil sem área de serviço ventilada.",
+          "wishlist": true,
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Lavagem e limpeza do dia a dia"
+    }
+  ]
+}

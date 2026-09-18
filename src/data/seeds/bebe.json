@@ -1,0 +1,715 @@
+{
+  "id": "bebe",
+  "nome": "Enxoval de Bebê",
+  "descricao": "Lista guiada e acolhedora para a chegada do bebê. Organize por categoria e tamanho, acompanhe o progresso, monte o armário e compartilhe a lista de presentes sem duplicar o que já foi reservado ou ganho.",
+  "inspiracao_ux": {
+    "checklist": "Progresso por categoria — o que já tem / o que falta",
+    "armario": "Itens com armario=true e campo tamanho entram no armário por faixa (RN, P, M…)",
+    "wishlist": "Salve links/produtos de qualquer loja nos itens marcados",
+    "lista_presentes": "Compartilhe o que falta; status reservado/recebido evita duplicata",
+    "timeline": "Ancorada na data prevista do parto (DPP)",
+    "status": [
+      "pendente",
+      "comprado",
+      "ganho"
+    ]
+  },
+  "marcos_timeline": [
+    {
+      "id": "segundo-trimestre",
+      "nome": "Montar a lista e o quartinho",
+      "quando": "A partir da 16ª–20ª semana"
+    },
+    {
+      "id": "grandes",
+      "nome": "Berço, carrinho e bebê-conforto",
+      "quando": "2º trimestre"
+    },
+    {
+      "id": "roupas",
+      "nome": "Roupas por tamanho (pouco RN, mais P)",
+      "quando": "3º trimestre"
+    },
+    {
+      "id": "cha",
+      "nome": "Lista do chá de bebê",
+      "quando": "4–6 semanas antes do chá"
+    },
+    {
+      "id": "mala",
+      "nome": "Mala da maternidade",
+      "quando": "A partir da 34ª semana"
+    },
+    {
+      "id": "revisao",
+      "nome": "Revisão do que falta",
+      "quando": "Últimas 2 semanas antes da DPP"
+    }
+  ],
+  "tamanhos_roupa": [
+    "RN",
+    "P",
+    "M",
+    "G",
+    "1-3m",
+    "3-6m",
+    "6-9m",
+    "9-12m"
+  ],
+  "categorias": [
+    {
+      "id": "quarto",
+      "nome": "Quarto",
+      "itens": [
+        {
+          "id": "berco",
+          "nome": "Berço com colchão certificado",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Verifique normas de segurança e colchão firme.",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "kit-berco",
+          "nome": "Kit berço (protetor, lençóis)",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Lençóis com elástico bem ajustados.",
+          "lista_presentes": true
+        },
+        {
+          "id": "protetor-colchao-berco",
+          "nome": "Protetor de colchão impermeável",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "mosquiteiro",
+          "nome": "Mosquiteiro para berço",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "comoda-trocador",
+          "nome": "Cômoda com trocador",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "trocador-portatil",
+          "nome": "Trocador portátil / tapete",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "mobile",
+          "nome": "Mobile para berço",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "luminaria-abajur",
+          "nome": "Luminária ou abajur com luz noturna",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "cesta-organizadora",
+          "nome": "Cestas organizadoras",
+          "quantidade_sugerida": 3,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "monitor-bebe",
+          "nome": "Babá eletrônica / monitor",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "ninho-redutor",
+          "nome": "Ninho redutor (uso supervisionado)",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Siga orientações de sono seguro.",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Sono e organização do quartinho"
+    },
+    {
+      "id": "vestir",
+      "nome": "Vestir",
+      "itens": [
+        {
+          "id": "body-manga-curta",
+          "nome": "Body manga curta",
+          "quantidade_sugerida": 6,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Compre pouco RN; reforce no P.",
+          "tamanho": [
+            "RN",
+            "P",
+            "M"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "body-manga-longa",
+          "nome": "Body manga longa",
+          "quantidade_sugerida": 6,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Útil em climas mais frios ou com ar-condicionado.",
+          "tamanho": [
+            "RN",
+            "P",
+            "M"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "macacao",
+          "nome": "Macacão com pezinho",
+          "quantidade_sugerida": 6,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "tamanho": [
+            "RN",
+            "P",
+            "M"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "mijao-culote",
+          "nome": "Mijão / culote",
+          "quantidade_sugerida": 6,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "tamanho": [
+            "P",
+            "M"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "meias",
+          "nome": "Pares de meias",
+          "quantidade_sugerida": 6,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "tamanho": [
+            "RN",
+            "P"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "toucas",
+          "nome": "Touca",
+          "quantidade_sugerida": 2,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "tamanho": [
+            "RN",
+            "P"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "luvas",
+          "nome": "Luvas (evitar arranhões)",
+          "quantidade_sugerida": 2,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "tamanho": [
+            "RN"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "saida-maternidade",
+          "nome": "Saída de maternidade",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "tamanho": [
+            "RN",
+            "P"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "casaquinho-casaco",
+          "nome": "Casaquinho / casaco leve",
+          "quantidade_sugerida": 3,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "tamanho": [
+            "P",
+            "M"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "pijama",
+          "nome": "Pijama / night",
+          "quantidade_sugerida": 4,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "tamanho": [
+            "P",
+            "M",
+            "G"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "cinta-umbilical",
+          "nome": "Faixa / cinta umbilical",
+          "quantidade_sugerida": 2,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Só se a pediatria indicar; muitos bebês não precisam.",
+          "tamanho": [
+            "RN"
+          ],
+          "armario": true,
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Roupas por tamanho — alimentam o armário"
+    },
+    {
+      "id": "higiene",
+      "nome": "Higiene",
+      "itens": [
+        {
+          "id": "fraldas-rn",
+          "nome": "Fraldas descartáveis RN",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Só 1 pacote: o bebê muda de tamanho rápido.",
+          "tamanho": "RN",
+          "lista_presentes": true
+        },
+        {
+          "id": "fraldas-p",
+          "nome": "Fraldas descartáveis P",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Reforce neste tamanho nos primeiros meses.",
+          "tamanho": "P",
+          "lista_presentes": true
+        },
+        {
+          "id": "lencos-umedecidos",
+          "nome": "Lenços umedecidos",
+          "quantidade_sugerida": 4,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "pomada-assadura",
+          "nome": "Pomada para assadura",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "kit-higiene",
+          "nome": "Kit higiene (tesoura, escova, pente, cortador)",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "algodao-haste",
+          "nome": "Algodão e hastes flexíveis",
+          "quantidade_sugerida": 2,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Hastes só na parte externa da orelha.",
+          "lista_presentes": true
+        },
+        {
+          "id": "sabonete-neutro",
+          "nome": "Sabonete líquido neutro",
+          "quantidade_sugerida": 2,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "shampoo-neutro",
+          "nome": "Shampoo neutro infantil",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "hidratante-infantil",
+          "nome": "Hidratante / óleo infantil",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "fraldas-de-pano",
+          "nome": "Fraldas de pano",
+          "quantidade_sugerida": 10,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Úteis como paninho extra e proteção.",
+          "lista_presentes": true
+        },
+        {
+          "id": "cesto-fraldas",
+          "nome": "Lixeira / cesto de fraldas",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Troca e cuidados diários"
+    },
+    {
+      "id": "banho",
+      "nome": "Banho",
+      "itens": [
+        {
+          "id": "banheira",
+          "nome": "Banheira com suporte",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "termometro-banho",
+          "nome": "Termômetro de banho",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "toalha-capuz",
+          "nome": "Toalha com capuz",
+          "quantidade_sugerida": 3,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "esponja-luva",
+          "nome": "Esponja ou luva de banho",
+          "quantidade_sugerida": 2,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "apoio-banho",
+          "nome": "Redutor / apoio de banho",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "robe-bebe",
+          "nome": "Roupão / saída de banho",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Banho seguro e confortável"
+    },
+    {
+      "id": "alimentacao",
+      "nome": "Alimentação",
+      "itens": [
+        {
+          "id": "mamadeiras",
+          "nome": "Mamadeiras",
+          "quantidade_sugerida": 4,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Mesmo na amamentação exclusiva, úteis para água/leite ordenhado.",
+          "lista_presentes": true
+        },
+        {
+          "id": "bicos-reposicao",
+          "nome": "Bicos de reposição",
+          "quantidade_sugerida": 4,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "esterilizador",
+          "nome": "Esterilizador ou panela dedicada",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "bombinha-leite",
+          "nome": "Bomba tira-leite",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "almofada-amamentacao",
+          "nome": "Almofada de amamentação",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "babadores",
+          "nome": "Babadores",
+          "quantidade_sugerida": 6,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "paninho-de-boca",
+          "nome": "Paninhos de boca",
+          "quantidade_sugerida": 8,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "potes-papinha",
+          "nome": "Potes para papinha / armazenamento",
+          "quantidade_sugerida": 6,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Mais úteis após a introdução alimentar.",
+          "lista_presentes": true
+        },
+        {
+          "id": "prato-colher-treino",
+          "nome": "Prato e colher de treino",
+          "quantidade_sugerida": 2,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "aquecedor-mamadeira",
+          "nome": "Aquecedor de mamadeira",
+          "quantidade_sugerida": 1,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Amamentação, fórmula e primeiras papinhas"
+    },
+    {
+      "id": "passeio",
+      "nome": "Passeio",
+      "itens": [
+        {
+          "id": "bebe-conforto",
+          "nome": "Bebê-conforto (cadeirinha para auto)",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Obrigatório para sair da maternidade de carro.",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "carrinho",
+          "nome": "Carrinho de bebê",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Confira compatibilidade com o bebê-conforto (travel system).",
+          "wishlist": true,
+          "lista_presentes": true
+        },
+        {
+          "id": "bolsa-maternidade",
+          "nome": "Bolsa maternidade com trocador",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "canguru-sling",
+          "nome": "Canguru ou sling",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "capa-chuva-carrinho",
+          "nome": "Capa de chuva para carrinho",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "protetor-sol",
+          "nome": "Protetor solar infantil / sombrinha",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Protetor só conforme idade indicada no rótulo.",
+          "lista_presentes": true
+        },
+        {
+          "id": "kit-passeio",
+          "nome": "Kit higiene para bolsa",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "brinquedo-viagem",
+          "nome": "Brinquedo leve para passeio",
+          "quantidade_sugerida": 2,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Saídas, carro e maternidade"
+    },
+    {
+      "id": "seguranca-saude",
+      "nome": "Segurança e Saúde",
+      "itens": [
+        {
+          "id": "termometro-corporal",
+          "nome": "Termômetro digital",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "kit-farmacinha",
+          "nome": "Farmacinha básica (soro, gaze, álcool 70%)",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Inclua apenas o que a pediatria indicar.",
+          "lista_presentes": true
+        },
+        {
+          "id": "aspirador-nasal",
+          "nome": "Aspirador nasal",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "chupeta",
+          "nome": "Chupeta (se for usar)",
+          "quantidade_sugerida": 2,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "notas": "Tenha reposição; esterilize com frequência.",
+          "lista_presentes": true
+        },
+        {
+          "id": "protetor-tomada",
+          "nome": "Protetores de tomada",
+          "quantidade_sugerida": 10,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "notas": "Mais relevantes quando o bebê engatinhar.",
+          "lista_presentes": true
+        },
+        {
+          "id": "grades-protecao",
+          "nome": "Grades / portões de proteção",
+          "quantidade_sugerida": 2,
+          "prioridade": "opcional",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "cortador-unha-bebe",
+          "nome": "Cortador de unha específico",
+          "quantidade_sugerida": 1,
+          "prioridade": "desejavel",
+          "status_inicial": "pendente",
+          "lista_presentes": true
+        },
+        {
+          "id": "prancha-identificacao",
+          "nome": "Cartão / documentos da maternidade",
+          "quantidade_sugerida": 1,
+          "prioridade": "essencial",
+          "status_inicial": "pendente",
+          "notas": "Separe documentos e plano de saúde na mala.",
+          "lista_presentes": true
+        }
+      ],
+      "descricao": "Cuidados básicos e prevenção"
+    }
+  ]
+}

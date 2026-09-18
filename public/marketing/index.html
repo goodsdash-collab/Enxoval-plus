@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Enxoval+ — organize o enxoval de casamento e de bebê numa lista inteligente, com progresso e compartilhamento com a família." />
+  <title>Enxoval+ — Enxoval de casamento e bebê numa lista inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- soft floating blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+    <span class="blob blob-c"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="Enxoval+ — início">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z" fill="currentColor" opacity=".95"/>
+          </svg>
+        </span>
+        <span class="logo-text">Enxoval<span class="logo-plus">+</span></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#ambientes">Ambientes</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#precos">Preços</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="/">Começar grátis</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="menu-mobile" class="menu-mobile" hidden>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#ambientes">Ambientes</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#precos">Preços</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="/">Começar grátis</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- 1. Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Casamento + bebê · lista fofa e inteligente
+          </p>
+          <h1 id="hero-title">Seu enxoval, organizado com carinho.</h1>
+          <p class="lead">
+            <strong>Enxoval+</strong> junta templates, status e a família numa lista só —
+            para o casamento e para o bebê.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="/" id="comecar">Começar grátis</a>
+            <a class="btn btn-ghost btn-lg" href="#ambientes">Explorar ambientes ✨</a>
+          </div>
+          <p class="hero-note">Sem cartão · Free com 1 enxoval · Produto em construção</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="deco-ring deco-ring-1"></div>
+          <div class="deco-ring deco-ring-2"></div>
+          <div class="mock-card">
+            <div class="mock-top">
+              <span class="mock-pill mock-pill-bebe">🍼 Enxoval do bebê</span>
+              <span class="mock-progress">62%</span>
+            </div>
+            <div class="progress-bar" role="presentation"><span style="width:62%"></span></div>
+            <ul class="mock-list">
+              <li class="status-comprado"><span class="dot"></span> Body manga longa · 3–6m <em>Comprado</em></li>
+              <li class="status-ganho"><span class="dot"></span> Cueiro soft <em>Ganho</em></li>
+              <li class="status-pendente"><span class="dot"></span> Banheira + suporte <em>Pendente</em></li>
+              <li class="status-pendente"><span class="dot"></span> Lençol berço (2) <em>Pendente</em></li>
+            </ul>
+            <div class="mock-footer">
+              <span class="mini-avatar">👩</span>
+              <span class="mini-avatar">👴</span>
+              <span>Compartilhado com mamãe e padrinhos</span>
+            </div>
+          </div>
+          <div class="mock-card mock-card-secondary">
+            <div class="mock-top">
+              <span class="mock-pill mock-pill-casa">💍 Casamento</span>
+              <span class="mock-progress blush">41%</span>
+            </div>
+            <div class="progress-bar blush" role="presentation"><span style="width:41%"></span></div>
+            <ul class="mock-list compact">
+              <li class="status-ganho"><span class="dot"></span> Jogo de panelas <em>Ganho</em></li>
+              <li class="status-comprado"><span class="dot"></span> Jogo de cama casal <em>Comprado</em></li>
+              <li class="status-pendente"><span class="dot"></span> Liquidificador <em>Pendente</em></li>
+            </ul>
+          </div>
+          <div class="floating-sticker sticker-heart">♡</div>
+          <div class="floating-sticker sticker-star">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Problem -->
+    <section class="section problem" id="problema" aria-labelledby="problema-title">
+      <div class="container narrow">
+        <h2 id="problema-title">O enxoval vira confusão</h2>
+        <p class="section-lead">WhatsApp, planilha e papel. O carinho vira estresse.</p>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <div class="icon-bubble icon-blush" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="28" height="28"><rect x="10" y="8" width="28" height="34" rx="6" fill="#F5D0C8"/><rect x="16" y="16" width="16" height="3" rx="1.5" fill="#C45C3E"/><rect x="16" y="24" width="16" height="3" rx="1.5" fill="#E8B4A8"/><rect x="16" y="32" width="10" height="3" rx="1.5" fill="#E8B4A8"/></svg>
+            </div>
+            <h3>Lista caótica</h3>
+            <p>Anotações espalhadas. Ninguém sabe o que já foi resolvido.</p>
+          </article>
+          <article class="problem-card">
+            <div class="icon-bubble icon-gold" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="28" height="28"><rect x="12" y="18" width="24" height="18" rx="4" fill="#F3E0B8"/><path d="M16 18v-3a8 8 0 0 1 16 0v3" stroke="#C4A574" stroke-width="3" fill="none"/><circle cx="24" cy="27" r="3" fill="#C4A574"/></svg>
+            </div>
+            <h3>Presentes repetidos</h3>
+            <p>Três liquidificadores, nenhuma toalha. Sem um lugar único, o risco é alto.</p>
+          </article>
+          <article class="problem-card">
+            <div class="icon-bubble icon-mint" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="28" height="28"><circle cx="24" cy="24" r="14" fill="#C8E6E0"/><path d="M18 24h12M24 18v12" stroke="#5A9E90" stroke-width="3" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Esquecer o essencial</h3>
+            <p>Falta o item básico na semana certa. A lista inteligente lembra por você.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. How it works -->
+    <section class="section how" id="como-funciona" aria-labelledby="como-title">
+      <div class="container">
+        <h2 id="como-title">Como funciona</h2>
+        <p class="section-lead">Três passinhos. Sem complicação.</p>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <h3>Escolha o enxoval</h3>
+            <p>Casamento, bebê ou os dois. Template pronto, ajuste ao seu jeito.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <h3>Marque o status</h3>
+            <p><strong>Pendente</strong>, <strong>comprado</strong> ou <strong>ganho</strong>. Progresso claro do que falta.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <h3>Compartilhe</h3>
+            <p>Convide quem ajuda. Menos mensagens, mais presentes certos.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 3b. Interactive 3D ambientes -->
+    <section class="section ambientes" id="ambientes" aria-labelledby="ambientes-title">
+      <div class="container">
+        <p class="features-kicker">Explore cada cantinho</p>
+        <h2 id="ambientes-title">Cada ambiente do enxoval</h2>
+        <p class="section-lead">
+          Arraste para girar · toque nos botões para trocar o cômodo.
+          Veja berço, banho, cama e cozinha em 3D fofinho.
+        </p>
+
+        <div class="scene-shell">
+          <div class="scene-tabs" role="tablist" aria-label="Ambientes">
+            <button type="button" class="scene-tab is-active" role="tab" aria-selected="true" data-room="bebe" id="tab-bebe">
+              <span class="tab-emoji" aria-hidden="true">🛏️</span> Quarto do bebê
+            </button>
+            <button type="button" class="scene-tab" role="tab" aria-selected="false" data-room="banho" id="tab-banho">
+              <span class="tab-emoji" aria-hidden="true">🛁</span> Banho
+            </button>
+            <button type="button" class="scene-tab" role="tab" aria-selected="false" data-room="casal" id="tab-casal">
+              <span class="tab-emoji" aria-hidden="true">🛌</span> Quarto de casal
+            </button>
+            <button type="button" class="scene-tab" role="tab" aria-selected="false" data-room="cozinha" id="tab-cozinha">
+              <span class="tab-emoji" aria-hidden="true">🍳</span> Cozinha
+            </button>
+          </div>
+
+          <div class="scene-stage">
+            <div id="scene-canvas-wrap" class="scene-canvas-wrap" aria-label="Cena 3D interativa do ambiente">
+              <canvas id="scene-canvas"></canvas>
+              <p class="scene-hint" id="scene-hint">Arraste para orbitar · pinça no celular</p>
+            </div>
+
+            <!-- Accessible 2D fallback (shown if WebGL fails) -->
+            <div id="scene-fallback" class="scene-fallback" hidden>
+              <p class="fallback-note">Seu navegador não suportou WebGL — aqui vão os ambientes em cartões fofos:</p>
+              <div class="fallback-grid">
+                <article class="fallback-card tone-mint" data-fallback="bebe">
+                  <div class="fallback-art" aria-hidden="true">
+                    <svg viewBox="0 0 160 100" width="100%" height="100"><rect width="160" height="100" rx="12" fill="#E8F6F2"/><rect x="40" y="45" width="80" height="40" rx="6" fill="#A8D8CF"/><rect x="48" y="30" width="64" height="20" rx="4" fill="#7EC4B8"/><circle cx="55" cy="55" r="5" fill="#fff"/><circle cx="105" cy="55" r="5" fill="#fff"/><rect x="70" y="58" width="20" height="8" rx="3" fill="#F5C6B8"/></svg>
+                  </div>
+                  <h3>Quarto do bebê</h3>
+                  <p>Berço, mobile e roupinhas — tudo no checklist.</p>
+                </article>
+                <article class="fallback-card tone-sky" data-fallback="banho">
+                  <div class="fallback-art" aria-hidden="true">
+                    <svg viewBox="0 0 160 100" width="100%" height="100"><rect width="160" height="100" rx="12" fill="#E8F2FA"/><ellipse cx="80" cy="62" rx="45" ry="22" fill="#A8C8E8"/><rect x="40" y="48" width="80" height="20" rx="8" fill="#7EB0D8"/><rect x="100" y="28" width="14" height="28" rx="4" fill="#F5D0C8"/></svg>
+                  </div>
+                  <h3>Banho / higiene</h3>
+                  <p>Banheira, toalhas e trocador — higiene sem esquecer nada.</p>
+                </article>
+                <article class="fallback-card tone-blush" data-fallback="casal">
+                  <div class="fallback-art" aria-hidden="true">
+                    <svg viewBox="0 0 160 100" width="100%" height="100"><rect width="160" height="100" rx="12" fill="#FBF0EC"/><rect x="30" y="48" width="100" height="36" rx="6" fill="#E8B4A8"/><rect x="36" y="38" width="88" height="18" rx="5" fill="#F5D0C8"/><circle cx="55" cy="42" r="8" fill="#fff"/><circle cx="105" cy="42" r="8" fill="#fff"/></svg>
+                  </div>
+                  <h3>Quarto de casal</h3>
+                  <p>Cama, jogo de lençóis e travesseiros da casa nova.</p>
+                </article>
+                <article class="fallback-card tone-peach" data-fallback="cozinha">
+                  <div class="fallback-art" aria-hidden="true">
+                    <svg viewBox="0 0 160 100" width="100%" height="100"><rect width="160" height="100" rx="12" fill="#FFF5EB"/><rect x="20" y="50" width="120" height="36" rx="6" fill="#E8C4A8"/><rect x="28" y="30" width="40" height="28" rx="4" fill="#C4A574"/><ellipse cx="110" cy="48" rx="22" ry="10" fill="#D4785C"/><rect x="100" y="38" width="6" height="16" rx="2" fill="#8a6a4a"/></svg>
+                  </div>
+                  <h3>Cozinha</h3>
+                  <p>Panelas, utensílios e eletros — o coração da casa.</p>
+                </article>
+              </div>
+            </div>
+
+            <aside class="scene-legend" aria-live="polite">
+              <p class="legend-label" id="legend-room">Quarto do bebê</p>
+              <ul class="legend-props" id="legend-props">
+                <li><span class="prop-swatch" style="background:#7EC4B8"></span> Berço</li>
+                <li><span class="prop-swatch" style="background:#F5C6B8"></span> Mobile</li>
+                <li><span class="prop-swatch" style="background:#E8D5B7"></span> Cômoda</li>
+              </ul>
+              <p class="legend-tip">Itens típicos desse ambiente no checklist do Enxoval+.</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Features — dual highlight -->
+    <section class="section features" id="recursos" aria-labelledby="recursos-title">
+      <div class="container">
+        <p class="features-kicker">Dois momentos · um app</p>
+        <h2 id="recursos-title">Casamento <em>e</em> bebê, lado a lado</h2>
+        <p class="section-lead">Cada fase com o detalhe que precisa — na mesma lista inteligente.</p>
+
+        <div class="feature-panels dual-highlight">
+          <article class="feature-panel panel-casamento">
+            <div class="panel-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="40" height="40"><circle cx="24" cy="28" r="10" fill="#F5D0C8"/><circle cx="40" cy="28" r="10" fill="#E8B4A8"/><path d="M20 40c4 8 20 8 24 0" stroke="#C45C3E" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+            </div>
+            <p class="panel-label">Casamento</p>
+            <h3>Casa nova, lista clara</h3>
+            <ul class="feature-list">
+              <li>Templates por cômodo</li>
+              <li>Status pendente / comprado / ganho</li>
+              <li>Progresso visual</li>
+              <li>Compartilhar com noivos e família</li>
+              <li><span class="badge-soon">Em breve</span> Presentes sem duplicata</li>
+            </ul>
+          </article>
+          <article class="feature-panel panel-bebe">
+            <div class="panel-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="40" height="40"><ellipse cx="32" cy="36" rx="16" ry="14" fill="#C8E6E0"/><circle cx="32" cy="22" r="10" fill="#A8D8CF"/><circle cx="28" cy="20" r="1.5" fill="#3d5c42"/><circle cx="36" cy="20" r="1.5" fill="#3d5c42"/><path d="M28 25c2 2 6 2 8 0" stroke="#5A9E90" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </div>
+            <p class="panel-label">Bebê</p>
+            <h3>Roupinha e tamanhos sob controle</h3>
+            <ul class="feature-list">
+              <li>Checklist por categoria</li>
+              <li>Tamanhos (RN, P, M, G…)</li>
+              <li>Ganho vs. o que falta</li>
+              <li>Timeline até a chegada</li>
+              <li>Compartilhar com avós e padrinhos</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="feature-chips" role="list">
+          <span class="chip" role="listitem">Templates prontos</span>
+          <span class="chip" role="listitem">Progresso fofo</span>
+          <span class="chip" role="listitem">Família no mesmo app</span>
+          <span class="chip" role="listitem">Status claros</span>
+          <span class="chip" role="listitem">Timeline</span>
+          <span class="chip" role="listitem">PT-BR</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Pricing -->
+    <section class="section pricing" id="precos" aria-labelledby="precos-title">
+      <div class="container">
+        <h2 id="precos-title">Preços simples</h2>
+        <p class="section-lead">Comece grátis. Produto ainda em construção.</p>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Free</h3>
+            <p class="price"><span class="currency">R$</span>0<span class="period">/mês</span></p>
+            <p class="price-desc">1 enxoval</p>
+            <ul>
+              <li>1 enxoval (casamento <em>ou</em> bebê)</li>
+              <li>Checklist com status</li>
+              <li>Compartilhar com a família</li>
+              <li>Templates essenciais</li>
+            </ul>
+            <a class="btn btn-ghost btn-block" href="/">Começar grátis</a>
+          </article>
+          <article class="price-card price-card-featured">
+            <p class="featured-label">Mais completo</p>
+            <h3>Pro</h3>
+            <p class="price"><span class="currency">R$</span>19,90<span class="period">/mês</span></p>
+            <p class="price-desc">Vários enxovais</p>
+            <ul>
+              <li>Casamento + bebê (vários)</li>
+              <li>Tudo do Free</li>
+              <li>Timeline e lembretes</li>
+              <li>Presentes sem duplicata <span class="badge-soon">Em breve</span></li>
+              <li>Prioridade no suporte</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="/">Quero o Pro</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container narrow">
+        <h2 id="faq-title">Perguntas frequentes</h2>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>O Enxoval+ é só para bebê?</summary>
+            <p>Não. Cobre <strong>casamento e bebê</strong> — as duas listas da vida, num só lugar.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Preciso pagar para começar?</summary>
+            <p>Não. O Free inclui <strong>1 enxoval</strong>. Evolua para o Pro (R$19,90/mês) se precisar de vários.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Dá para compartilhar com a família?</summary>
+            <p>Sim. Quem ajuda vê o que está pendente, comprado ou ganho.</p>
+          </details>
+          <details class="faq-item">
+            <summary>O que significam pendente, comprado e ganho?</summary>
+            <p><strong>Pendente</strong>: ainda falta. <strong>Comprado</strong>: já comprado. <strong>Ganho</strong>: veio de presente.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Já existe app / conta real?</summary>
+            <p>Ainda não. Esta é a página de marketing — o produto está em construção. Em breve: cadastro e checklist de verdade.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Final CTA -->
+    <section class="section final-cta" aria-labelledby="cta-final-title">
+      <div class="container narrow cta-box">
+        <div class="cta-deco" aria-hidden="true">✦ ♡ ✦</div>
+        <h2 id="cta-final-title">Comece o enxoval com calma</h2>
+        <p>Casamento, bebê — ou os dois. Numa lista inteligente e fofinha.</p>
+        <a class="btn btn-primary btn-lg" href="/">Começar grátis</a>
+        <p class="hero-note">Sem cartão · Produto em construção</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark small" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z" fill="currentColor"/></svg>
+        </span>
+        <div>
+          <strong>Enxoval+</strong>
+          <p>Enxoval de casamento e bebê, numa lista inteligente.</p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Rodapé">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#ambientes">Ambientes</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#precos">Preços</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <p class="footer-meta">© 2026 Enxoval+ · Feito para o Brasil · Produto em construção</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('menu-mobile');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', function () {
+        var open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        toggle.setAttribute('aria-label', open ? 'Abrir menu' : 'Fechar menu');
+        menu.hidden = open;
+      });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Abrir menu');
+          menu.hidden = true;
+        });
+      });
+    })();
+  </script>
+  <!-- Three.js r128 from CDN (static, no build) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="scene.js"></script>
+</body>
+</html>
