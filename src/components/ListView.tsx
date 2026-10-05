@@ -1,9 +1,7 @@
 "use client";
-
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { STATUS_OPTIONS, PRIORIDADES, type StatusItem } from "@/lib/types";
-
 type Item = {
   id: string;
   nome: string;
@@ -14,14 +12,12 @@ type Item = {
   isCustom: boolean;
   categoriaId: string;
 };
-
 type Categoria = {
   id: string;
   nome: string;
   descricao: string | null;
   itens: Item[];
 };
-
 type EnxovalData = {
   id: string;
   nome: string;
@@ -32,7 +28,6 @@ type EnxovalData = {
   concluidos: number;
   urgentes: Item[];
 };
-
 export function ListView({
   listId,
   shareToken,
@@ -51,7 +46,6 @@ export function ListView({
   const [addForm, setAddForm] = useState({ nome: "", quantidade: 1, prioridade: "desejavel", categoriaId: "" });
   const [shareMsg, setShareMsg] = useState("");
   const [shareUrl, setShareUrl] = useState("");
-
   const load = useCallback(async () => {
     setLoading(true);
     setError("");
@@ -76,11 +70,9 @@ export function ListView({
     }
     setLoading(false);
   }, [listId, shareToken]);
-
   useEffect(() => {
     load();
   }, [load]);
-
   async function updateStatus(itemId: string, status: StatusItem) {
     if (!canEdit || !data) return;
     // optimistic
@@ -101,14 +93,12 @@ export function ListView({
         urgentes,
       };
     });
-
     await fetch(`/api/lists/${data.id}/items`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ itemId, status, token: shareToken }),
     });
   }
-
   async function removeItem(itemId: string) {
     if (!canEdit || !data) return;
     if (!confirm("Remover este item?")) return;
@@ -119,7 +109,6 @@ export function ListView({
     });
     load();
   }
-
   async function addItem(e: React.FormEvent) {
     e.preventDefault();
     if (!canEdit || !data) return;
@@ -134,15 +123,12 @@ export function ListView({
       load();
     }
   }
-
-
   async function deleteList() {
     if (!data || shareToken) return;
     if (!confirm("Apagar este enxoval permanentemente?")) return;
     const res = await fetch(`/api/lists/${data.id}`, { method: "DELETE" });
     if (res.ok) window.location.href = "/";
   }
-
   async function createShare(canEditShare: boolean) {
     if (!data) return;
     setShareMsg("");
@@ -165,7 +151,6 @@ export function ListView({
       setShareMsg(`Link gerado: ${full}`);
     }
   }
-
   if (loading) {
     return <p className="text-stone-500 text-center py-12">Carregando lista…</p>;
   }
@@ -179,17 +164,14 @@ export function ListView({
       </div>
     );
   }
-
   const categories = data.categorias;
   const visibleCats =
     filterCat === "all" ? categories : categories.filter((c) => c.id === filterCat);
-
   const prioridadeBadge = (p: string) => {
     if (p === "essencial") return "bg-rose-100 text-rose-700";
     if (p === "desejavel") return "bg-lavender text-purple-800";
     return "bg-stone-100 text-stone-600";
   };
-
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -221,7 +203,6 @@ export function ListView({
           </div>
         )}
       </div>
-
       {(shareMsg || shareUrl) && (
         <div className="rounded-xl bg-mint-soft border border-mint px-4 py-3 text-sm text-emerald-900">
           {shareMsg}
@@ -230,7 +211,6 @@ export function ListView({
           )}
         </div>
       )}
-
       {/* Progress */}
       <div className="card-soft p-5">
         <div className="flex justify-between text-sm mb-2">
@@ -246,7 +226,6 @@ export function ListView({
           />
         </div>
       </div>
-
       {/* Urgente */}
       {data.urgentes.length > 0 ? (
         <section className="rounded-2xl border border-rose-200 bg-blush-soft/80 p-4">
@@ -286,7 +265,6 @@ export function ListView({
           🎉 Nenhum item essencial pendente — ótimo progresso!
         </section>
       )}
-
       {/* Filters + add */}
       <div className="flex flex-wrap items-center gap-2">
         <select
@@ -307,7 +285,6 @@ export function ListView({
           </button>
         )}
       </div>
-
       {showAdd && canEdit && (
         <form onSubmit={addItem} className="card-soft p-4 space-y-3">
           <h3 className="font-medium text-rose-800">Adicionar item</h3>
@@ -355,7 +332,6 @@ export function ListView({
           </button>
         </form>
       )}
-
       {/* Categories */}
       <div className="space-y-5">
         {visibleCats.length === 0 && (
