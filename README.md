@@ -2,10 +2,12 @@
 
 App B2C em português para organizar checklists de enxoval de **casamento** e **bebê**.
 
-## Como rodar
+## Como rodar (local)
 
 ```bash
 cd /workspace/enxo/app
+cp .env.example .env
+# Ajuste DATABASE_URL e DIRECT_URL (Neon Postgres) ou use um Postgres local
 npm install
 npx prisma db push
 npm run dev
@@ -18,8 +20,8 @@ Scripts úteis:
 | Comando | Descrição |
 |---------|-----------|
 | `npm run dev` | Dev server na porta **3000** |
-| `npm run build` / `npm start` | Build de produção |
-| `npm run db:push` | Aplica o schema Prisma no SQLite |
+| `npm run build` / `npm start` | Build de produção (`prisma generate && next build`) |
+| `npm run db:push` | Aplica o schema Prisma no banco |
 | `npm run db:generate` | Regenera o client Prisma |
 
 Se a porta 3000 estiver ocupada:
@@ -31,10 +33,20 @@ npx next dev -p 3001
 ## Stack
 
 - Next.js 14 (App Router) + TypeScript + Tailwind
-- SQLite via **Prisma** — arquivo em `data/enxoval.db`
-- `DATABASE_URL=file:../data/enxoval.db` (definido em `.env`; caminho relativo ao diretório `prisma/`)
+- **PostgreSQL via Prisma** (produção: **Neon**; use `DATABASE_URL` pooled + `DIRECT_URL` para migrations)
 - Auth opcional: email/senha (cookie `enxoval_session`) **ou** modo convidado (cookie `enxoval_guest`)
 - Seeds: `src/data/seeds/casamento.json` e `bebe.json` (origem em `/workspace/enxo/templates/`)
+
+## Deploy (Vercel + Neon)
+
+1. Crie um projeto Postgres no **Neon** e copie as connection strings.
+2. No projeto **Vercel**, defina:
+   - `DATABASE_URL` — connection string pooled (runtime / serverless)
+   - `DIRECT_URL` — connection string direta (migrations / `prisma db push`)
+3. Conecte o repositório GitHub e faça o deploy (build: `prisma generate && next build`).
+4. Após o primeiro deploy (ou via CLI), rode `npx prisma db push` apontando para o Neon.
+
+Não commite `.env` — use apenas `.env.example` como modelo.
 
 ## Funcionalidades
 
@@ -50,13 +62,11 @@ npx next dev -p 3001
 
 - **Sem pagamentos reais** — o botão Pro fica “Em breve”; o limite Free (1 lista) já é aplicado na API
 - **Modo convidado**: listas ligadas ao cookie `enxoval_guest` no navegador (somem se limpar cookies)
-- **SQLite local**: banco em `data/enxoval.db` (ignorado no git via `data/*.db`)
 - Sem integrações de lojas
 
 ## Auth / persistência
 
-- Preferido neste MVP: SQLite + email/senha opcional (Entrar no header)
-- Sem login: cookie de convidado
+- Email/senha opcional (Entrar no header) ou cookie de convidado
 - Plano Free: no máximo **1 enxoval** por usuário/convidado
 
 ## Marketing (landing)
@@ -67,14 +77,8 @@ Servida também pelo app em:
 
 - [http://localhost:3000/marketing/index.html](http://localhost:3000/marketing/index.html)
 
-Link **Sobre** no rodapé do app aponta para essa página. Para servir a pasta original à parte:
-
-```bash
-cd /workspace/enxo/landing && python3 -m http.server 8080
-```
+Link **Sobre** no rodapé do app aponta para essa página.
 
 ## Repositório
-
-Remote sugerido (ainda não autenticado neste ambiente):
 
 `https://github.com/goodsdash-collab/Enxoval-plus.git`
