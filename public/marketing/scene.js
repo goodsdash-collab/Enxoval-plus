@@ -54,6 +54,15 @@
     }
   };
 
+  function roomFromUrl() {
+    try {
+      var r = new URLSearchParams(window.location.search).get('ambiente');
+      return r && ROOM_META[r] ? r : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
   function showFallback() {
     if (wrap) wrap.hidden = true;
     if (fallback) fallback.hidden = false;
@@ -74,7 +83,7 @@
   // --- WebGL check ---
   if (typeof THREE === 'undefined') {
     showFallback();
-    updateLegend('bebe');
+    updateLegend(roomFromUrl() || 'bebe');
     return;
   }
 
@@ -87,7 +96,7 @@
   }
   if (!glOk) {
     showFallback();
-    updateLegend('bebe');
+    updateLegend(roomFromUrl() || 'bebe');
     return;
   }
 
@@ -568,6 +577,12 @@
   }
 
   loadRoom('bebe');
+  var initialRoom = roomFromUrl();
+  if (initialRoom && initialRoom !== 'bebe') {
+    tabs.forEach(function (t) {
+      if (t.getAttribute('data-room') === initialRoom) t.click();
+    });
+  }
   applyCamera();
   requestAnimationFrame(animate);
 

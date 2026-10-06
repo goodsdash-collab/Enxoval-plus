@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { STATUS_OPTIONS, PRIORIDADES, type StatusItem } from "@/lib/types";
+import { storeSearchLinks } from "@/lib/stores";
 type Item = {
   id: string;
   nome: string;
@@ -366,6 +367,7 @@ export function ListView({
                       {item.notas && (
                         <p className="text-xs text-stone-400 mt-1 line-clamp-2">{item.notas}</p>
                       )}
+                      <StoreButtons nome={item.nome} />
                     </div>
                     {canEdit ? (
                       <select
@@ -408,6 +410,31 @@ export function ListView({
           </section>
         ))}
       </div>
+    </div>
+  );
+}
+const STORE_STYLES: Record<string, string> = {
+  amazon: "border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-100",
+  mercadolivre: "border-yellow-200 bg-yellow-50 text-yellow-800 hover:bg-yellow-100",
+  shopee: "border-orange-200 bg-orange-50 text-orange-700 hover:bg-orange-100",
+};
+function StoreButtons({ nome }: { nome: string }) {
+  return (
+    <div className="mt-2 flex flex-wrap items-center gap-1.5" aria-label={`Buscar "${nome}" nas lojas`}>
+      <span className="text-[11px] text-stone-400">Buscar em:</span>
+      {storeSearchLinks(nome).map((s) => (
+        <a
+          key={s.id}
+          href={s.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`Buscar "${nome}" na ${s.label}`}
+          className={`inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-medium leading-none transition ${STORE_STYLES[s.id]}`}
+        >
+          {s.label}
+          <span aria-hidden className="ml-1 opacity-60">↗</span>
+        </a>
+      ))}
     </div>
   );
 }
