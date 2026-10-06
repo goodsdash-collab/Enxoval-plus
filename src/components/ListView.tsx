@@ -1,8 +1,10 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { STATUS_OPTIONS, PRIORIDADES, type StatusItem } from "@/lib/types";
 import { storeSearchLinks } from "@/lib/stores";
+import { normalizeName } from "@/lib/normalize";
+import { CatalogPicker } from "@/components/CatalogPicker";
 type Item = {
   id: string;
   nome: string;
@@ -47,8 +49,11 @@ export function ListView({
   const [addForm, setAddForm] = useState({ nome: "", quantidade: 1, prioridade: "desejavel", categoriaId: "" });
   const [shareMsg, setShareMsg] = useState("");
   const [shareUrl, setShareUrl] = useState("");
-  const load = useCallback(async () => {
-    setLoading(true);
+  const [showCatalog, setShowCatalog] = useState(false);
+  const [addedMsg, setAddedMsg] = useState("");
+  const load = useCallback(async (opts?: { silent?: boolean }) => {
+    const silent = opts?.silent ?? false;
+    if (!silent) setLoading(true);
     setError("");
     try {
       let url: string;
@@ -60,20 +65,39 @@ export function ListView({
       const res = await fetch(url);
       const json = await res.json();
       if (!res.ok) {
-        setError(json.error || "Erro ao carregar");
-        setData(null);
+        if (!silent) {
+          setError(json.error || "Erro ao carregar");
+          setData(null);
+        }
       } else {
         setData(json.enxoval);
         setCanEdit(json.canEdit ?? false);
       }
     } catch {
-      setError("Falha de rede");
+      if (!silent) setError("Falha de rede");
     }
-    setLoading(false);
+    if (!silent) setLoading(false);
   }, [listId, shareToken]);
   useEffect(() => {
     load();
   }, [load]);
+  const existingNames = useMemo(
+    () => new Set((data?.categorias ?? []).flatMap((c) => c.itens.map((i) => normalizeName(i.nome)))),
+    [data]
+  );
+  useEffect(() => {
+    if (!addedMsg) return;
+    const t = setTimeout(() => setAddedMsg(""), 5000);
+    return () => clearTimeout(t);
+  }, [addedMsg]);
+  const closeCatalog = useCallback(() => setShowCatalog(false), []);
+  const onCatalogAdded = useCallback(
+    (count: number, msg: string, closing: boolean) => {
+      if (closing) setAddedMsg(msg);
+      if (count > 0) load({ silent: true });
+    },
+    [load]
+  );
   async function updateStatus(itemId: string, status: StatusItem) {
     if (!canEdit || !data) return;
     // optimistic
@@ -108,7 +132,7 @@ export function ListView({
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ itemId, token: shareToken }),
     });
-    load();
+    load({ silent: true });
   }
   async function addItem(e: React.FormEvent) {
     e.preventDefault();
@@ -121,7 +145,7 @@ export function ListView({
     if (res.ok) {
       setShowAdd(false);
       setAddForm({ nome: "", quantidade: 1, prioridade: "desejavel", categoriaId: "" });
-      load();
+      load({ silent: true });
     }
   }
   async function deleteList() {
@@ -280,15 +304,42 @@ export function ListView({
             </option>
           ))}
         </select>
+        {canEdit && !shareToken && (
+          <button onClick={() => setShowCatalog(true)} className="btn-primary text-sm py-1.5">
+            📋 Escolher do catálogo
+          </button>
+        )}
         {canEdit && (
-          <button onClick={() => setShowAdd(!showAdd)} className="btn-primary text-sm py-1.5">
-            + Item
+          <button
+            onClick={() => setShowAdd(!showAdd)}
+            className={shareToken ? "btn-primary text-sm py-1.5" : "btn-secondary text-sm py-1.5"}
+          >
+            {showAdd ? "Fechar" : "+ Digitar item"}
           </button>
         )}
       </div>
+      {addedMsg && (
+        <div className="rounded-xl bg-mint-soft border border-mint px-4 py-3 text-sm text-emerald-900" role="status">
+          {addedMsg}
+        </div>
+      )}
+      {showCatalog && canEdit && !shareToken && (
+        <CatalogPicker
+          listId={data.id}
+          tipo={data.tipo}
+          existingNames={existingNames}
+          onClose={closeCatalog}
+          onAdded={onCatalogAdded}
+        />
+      )}
       {showAdd && canEdit && (
         <form onSubmit={addItem} className="card-soft p-4 space-y-3">
-          <h3 className="font-medium text-rose-800">Adicionar item</h3>
+          <h3 className="font-medium text-rose-800">Digitar um item</h3>
+          {!shareToken && (
+            <p className="text-xs text-stone-500">
+              Não achou no catálogo? Escreva o nome do item aqui.
+            </p>
+          )}
           <input
             required
             placeholder="Nome do item"
@@ -402,7 +453,13 @@ export function ListView({
                 <li className="px-4 py-8 text-center text-sm text-stone-400 space-y-1">
                   <p>Nenhum item nesta categoria.</p>
                   {canEdit && (
-                    <p className="text-xs">Use <strong>+ Item</strong> para adicionar algo personalizado.</p>
+                    <p className="text-xs">
+                      {shareToken ? (
+                        <>Use <strong>+ Digitar item</strong> para adicionar algo.</>
+                      ) : (
+                        <>Use <strong>Escolher do catálogo</strong> ou <strong>+ Digitar item</strong> para adicionar.</>
+                      )}
+                    </p>
                   )}
                 </li>
               )}
