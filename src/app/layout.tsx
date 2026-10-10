@@ -18,7 +18,16 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        {/* App Android (TWA): o Chrome abre com referrer android-app://<pacote>; guardamos na sessionStorage
+            para as próximas páginas. No app, escondemos menções a planos pagos (regras do Google Play). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var k="enxoval:twa";if(document.referrer.indexOf("android-app://br.com.enxovalplus.app")===0||/[?&]twa=1(&|$)/.test(location.search))sessionStorage.setItem(k,"1");if(sessionStorage.getItem(k)==="1")document.documentElement.classList.add("twa")}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="antialiased min-h-screen flex flex-col">
         <Header />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-10 pt-6">{children}</main>

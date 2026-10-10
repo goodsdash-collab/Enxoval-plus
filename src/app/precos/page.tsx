@@ -5,9 +5,10 @@ export default function PrecosPage() {
     <div className="max-w-3xl mx-auto space-y-8">
       <div className="text-center pt-2">
         <h1 className="font-display text-3xl text-rose-800">Planos</h1>
-        <p className="mt-2 text-stone-600">
+        <p className="twa-hide mt-2 text-stone-600">
           Free = 1 enxoval. Pro = R$19,90/mês. Pagamentos reais em breve.
         </p>
+        <p className="twa-only mt-2 text-stone-600">O Enxoval+ é gratuito: cada conta tem 1 enxoval completo.</p>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -27,7 +28,7 @@ export default function PrecosPage() {
           </Link>
         </div>
 
-        <div className="card-soft p-6 border-2 border-rose-300 relative overflow-hidden">
+        <div className="twa-hide card-soft p-6 border-2 border-rose-300 relative overflow-hidden">
           <span className="absolute top-3 right-3 rounded-full bg-rose-400 text-white text-xs px-2 py-0.5">
             Em breve
           </span>
@@ -55,7 +56,7 @@ export default function PrecosPage() {
         </a>
       </p>
 
-      <p className="text-center text-xs text-stone-400">
+      <p className="twa-hide text-center text-xs text-stone-400">
         UI de preços apenas — sem cobrança real neste MVP. Limite Free já é aplicado na criação de
         listas.
       </p>

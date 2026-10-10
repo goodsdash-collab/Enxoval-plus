@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     if (!user || !(await verifyPassword(password || "", user.passwordHash))) {
       return NextResponse.json({ error: "Email ou senha inválidos" }, { status: 401 });
     }
-    createSession(user.id);
+    await createSession(user.id);
     return NextResponse.json({ id: user.id, email: user.email });
   } catch (e) {
     console.error(e);

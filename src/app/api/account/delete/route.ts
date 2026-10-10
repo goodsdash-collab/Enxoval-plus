@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
-import { clearSession, getCurrentUser, getGuestKey, verifyPassword } from "@/lib/auth";
+import { clearGuestCookie, clearSession, getCurrentUser, getGuestKey, verifyPassword } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -28,8 +27,8 @@ export async function POST(req: NextRequest) {
     ...(user ? [prisma.user.delete({ where: { id: user.id } })] : []),
   ]);
 
-  clearSession();
-  cookies().delete("enxoval_guest");
+  await clearSession();
+  clearGuestCookie();
   return NextResponse.json({
     ok: true,
     deletedLists: lists.count,

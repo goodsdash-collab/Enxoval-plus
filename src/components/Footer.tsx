@@ -8,7 +8,7 @@ export function Footer() {
           Enxoval<span className="text-sage">+</span> · MVP · Plano Free = 1 enxoval
         </p>
         <nav className="flex flex-wrap items-center gap-4">
-          <Link href="/precos" className="hover:text-rose-700">
+          <Link href="/precos" className="twa-hide hover:text-rose-700">
             Preços
           </Link>
           <a href="/marketing/index.html" className="hover:text-rose-700">

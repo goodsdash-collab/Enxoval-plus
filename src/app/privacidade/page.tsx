@@ -46,7 +46,7 @@ export default function PrivacidadePage() {
           tiver o link pode ver a lista (ou editar, se você escolher essa opção).
         </li>
         <li>
-          <strong>Cookies essenciais:</strong> <code>enxoval_session</code> (mantém você conectado por até 30 dias) e{" "}
+          <strong>Cookies essenciais:</strong> <code>enxoval_sid</code> (mantém você conectado por até 30 dias; guarda um código de sessão assinado digitalmente) e{" "}
           <code>enxoval_guest</code> (identifica as listas do modo convidado, sem conta, por até 1 ano). São cookies técnicos,
           necessários para o app funcionar. <strong>Não usamos cookies de publicidade nem de análise/estatística.</strong>
         </li>

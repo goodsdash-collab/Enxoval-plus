@@ -35,3 +35,7 @@ body {
     @apply inline-flex items-center justify-center rounded-full bg-white border border-rose-200 px-4 py-2 text-rose-700 font-medium hover:bg-rose-50 transition;
   }
 }
+
+/* Dentro do app Android (TWA) — ver layout.tsx */
+html.twa .twa-hide { display: none !important; }
+html:not(.twa) .twa-only { display: none !important; }

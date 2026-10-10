@@ -35,7 +35,9 @@ export default function HomePage() {
   async function create(tipo: "casamento" | "bebe") {
     if (lists.length >= 1) {
       setError(
-        "Plano Free permite 1 enxoval. Faça upgrade para Pro (R$19,90/mês) para criar mais."
+        document.documentElement.classList.contains("twa")
+          ? "Por enquanto, cada conta tem 1 enxoval."
+          : "Plano Free permite 1 enxoval. Faça upgrade para Pro (R$19,90/mês) para criar mais."
       );
       return;
     }
@@ -49,7 +51,11 @@ export default function HomePage() {
     const data = await res.json();
     setCreating(null);
     if (!res.ok) {
-      setError(data.error || "Erro ao criar");
+      setError(
+        data.code === "FREE_LIMIT" && document.documentElement.classList.contains("twa")
+          ? "Por enquanto, cada conta tem 1 enxoval."
+          : data.error || "Erro ao criar"
+      );
       return;
     }
     router.push(`/lista/${data.enxoval.id}`);
@@ -68,7 +74,7 @@ export default function HomePage() {
           Escolha Casamento ou Bebê, marque o que já tem, acompanhe o progresso e
           compartilhe a lista com a família.
         </p>
-        <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-100 px-3 py-1 text-xs text-rose-700">
+        <p className="twa-hide mt-3 inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-100 px-3 py-1 text-xs text-rose-700">
           Plano <strong>Free</strong>: 1 enxoval ·{" "}
           <Link href="/precos" className="underline font-medium hover:text-rose-900">
             Ver Pro R$19,90/mês
@@ -129,7 +135,12 @@ export default function HomePage() {
       </section>
 
       {atFreeLimit && !error && (
-        <div className="rounded-2xl border border-rose-100 bg-blush-soft/60 px-4 py-3 text-sm text-rose-900">
+        <div className="twa-only rounded-2xl border border-rose-100 bg-blush-soft/60 px-4 py-3 text-sm text-rose-900">
+          Você já tem 1 enxoval. Por enquanto, cada conta tem 1 enxoval — abra o seu abaixo para continuar.
+        </div>
+      )}
+      {atFreeLimit && !error && (
+        <div className="twa-hide rounded-2xl border border-rose-100 bg-blush-soft/60 px-4 py-3 text-sm text-rose-900">
           Você já tem 1 enxoval no plano Free. Para criar outro (ex.: Casamento e Bebê), confira o{" "}
           <Link href="/precos" className="underline font-medium">
             plano Pro (R$19,90/mês)
@@ -142,7 +153,7 @@ export default function HomePage() {
         <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900 text-sm">
           {error}{" "}
           {(error.includes("Pro") || error.includes("Free")) && (
-            <Link href="/precos" className="underline font-medium">
+            <Link href="/precos" className="twa-hide underline font-medium">
               Ver planos
             </Link>
           )}

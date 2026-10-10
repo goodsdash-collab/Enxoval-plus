@@ -55,7 +55,7 @@ export function Header() {
           </span>
         </Link>
         <nav className="flex items-center gap-3 text-sm">
-          <Link href="/precos" className="text-rose-600 hover:text-rose-800">
+          <Link href="/precos" className="twa-hide text-rose-600 hover:text-rose-800">
             Preços
           </Link>
           {email ? (
