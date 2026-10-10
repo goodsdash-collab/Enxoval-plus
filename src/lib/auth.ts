@@ -75,9 +75,10 @@ export async function clearSession() {
 }
 
 export async function getCurrentUser() {
+  const raw = cookies().get(SESSION_COOKIE)?.value; // fora do try: o Next precisa ver o uso de cookies()
   let userId: string | null = null;
   try {
-    userId = verifySessionToken(cookies().get(SESSION_COOKIE)?.value);
+    userId = verifySessionToken(raw);
   } catch (e) {
     console.error("sessão:", (e as Error).message); // sem segredo = ninguém logado (falha fechada)
   }
