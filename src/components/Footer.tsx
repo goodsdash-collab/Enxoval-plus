@@ -17,6 +17,12 @@ export function Footer() {
           <Link href="/" className="hover:text-rose-700">
             Início
           </Link>
+          <Link href="/privacidade" className="hover:text-rose-700">
+            Privacidade
+          </Link>
+          <Link href="/excluir-conta" className="hover:text-rose-700">
+            Excluir conta
+          </Link>
         </nav>
       </div>
     </footer>
